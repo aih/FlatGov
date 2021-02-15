@@ -1,5 +1,6 @@
 from .settings import *
 
+DEBUG = True
 
 INSTALLED_APPS += [
     'common',
@@ -9,12 +10,16 @@ INSTALLED_APPS += [
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'flatgov',
-        'USER': 'vmm',
-        'PASSWORD': 'vmm',
-        'HOST': 'localhost',
-        'PORT': 5432,
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'flatgov',
+       'USER': 'vmm',
+       'PASSWORD': 'vmm',
+       'HOST': 'localhost',
+       'PORT': 5432,
+    },
+    'sqlite3': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
